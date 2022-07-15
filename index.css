@@ -1,0 +1,189 @@
+/* 公用样式 */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    cursor: default;
+    overflow: hidden;
+    background-color: #222;
+    color: #ddd;
+    font-family: Arial, Helvetica, sans-serif;
+    user-select: none;
+    touch-action: none;
+}
+/* 大按钮 */
+.b-btn{
+    padding: 2px 5px;
+    margin: 5px 0;
+    border-radius: 8px;
+    font-size: 1.2rem;
+    border: #ddd solid 2px;
+    transition-duration: .5s;
+}
+.b-btn:hover{
+    cursor: pointer;
+    background-color: #ddd;
+    color: #222;
+    transition-duration: .5s;
+}
+/* 小按钮 */
+.s-btn{
+    padding: 1px 3px;
+    cursor: pointer;
+    border-radius: 3px;
+    border: #ddd solid 1px;
+    transition-duration: .5s;
+}
+.s-btn:hover{
+    cursor: pointer;
+    background-color: #ddd;
+    color: #222;
+    transition-duration: .5s;
+}
+/* 游戏画布 */
+#canvas1,#canvas2{
+    position: absolute;
+    top: 30px;
+}
+/* 游戏顶栏 */
+#sidebar{
+    position: fixed;
+    top: 0;
+    left: 10px;
+    line-height: 30px;
+    font-size: 1.1rem;
+}
+/* 开始菜单 */
+#welcome{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 100px 0;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #222;
+}
+#welcome>h1{
+    font-size: 3rem;
+    letter-spacing: 5px;
+}
+footer{
+    position: absolute;
+    bottom: 2px;
+    text-align: center;
+}
+footer a{
+    cursor: pointer;
+    color: #ddd;
+    text-decoration: none;
+}
+#options ul{
+    list-style: none;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 2px solid #ddd;
+}
+#options li:nth-child(2){
+    border-left: 2px solid #ddd;
+}
+#options li:nth-child(3){
+    border-left: 2px solid #ddd;
+}
+#options li{
+    display: inline-block;
+    height: 25px;
+    line-height: 25px;
+    width: 60px;
+    text-align: center;
+    cursor: pointer;
+}
+.active{
+    background-color: #ddd;
+    color: #222;
+}
+.set-icon{
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    cursor: pointer;
+}
+.set-icon:hover{
+    transition-duration: .5s;
+    transform: rotate(180deg);
+}
+.docs-icon{
+    position: absolute;
+    top: 10px;
+    left: 60px;
+    cursor: pointer;
+}
+.user-icon{
+    position: absolute;
+    top: 10px;
+    left: 110px;
+    cursor: pointer;
+}
+#user{
+    background-color: #ddd;
+    color: #222;
+    padding: 0 5px;
+    border-radius: 5px;
+    line-height: 30px;
+    position: absolute;
+    top: 15px;
+    left: 155px;
+    font-size: 1.5rem;
+}
+/* 提示菜单 */
+.note{
+    position: fixed;
+    z-index: 1;
+    top: calc(50vh - 200px);
+    left: calc(50vw - 150px);
+    height: 400px;
+    width: 300px;
+    border: #ddd solid 2px;
+    background-color: #222;
+    border-radius: 10px;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+.note h1{
+    font-size: 2rem;
+}
+.note p{
+    font-size: 1.1rem;
+    margin: 4px;
+    text-align: center;
+}
+/* 虚拟键盘 */
+#wsad{
+    position: fixed;
+    z-index: 1;
+    bottom: 10px;
+    grid-template-columns: 40px 60px 40px;
+    grid-template-rows: 40px 60px 40px;
+    background-color: #222;
+    opacity: 0.7;
+    border-radius: 50%;
+}
+#wsad img{
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+#add-speed{
+    margin: 10px;
+    font-size: 2rem;
+    line-height: 44px;
+    text-align: center;
+    cursor: pointer;
+}

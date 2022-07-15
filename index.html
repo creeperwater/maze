@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0,user-scalable=no"/>
+    <title>吃豆人：迷宫</title>
+    <base target="_blank">
+    <link rel="icon" href="favicon.ico">
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+<section id="welcome">
+    <img src="asset/set.svg" class="set-icon" onclick="options_call()">
+    <img src="asset/docs.svg" class="docs-icon" onclick="docs_call();">
+    <div id="options" class="note" style="display: none;">
+      <h1>设置</h1>
+      <p>迷宫生成算法</p>
+      <ul><li id="opt-math-c">经典</li><li id="opt-math-d">深搜</li><li id="opt-math-t">二分</li></ul>
+      <p>地图尺寸</p>
+      <ul><li id="opt-size-a">响应式</li><li id="opt-size-s">正方形</li><li id="opt-size-c">标准</li></ul>
+      <p>游戏音效（暂时下线）</p>
+      <ul><li id="opt-sound-c">关</li><li id="opt-sound-o">开</li></ul>
+      <p>背景音乐（暂时下线）</p>
+      <ul><li id="opt-music-c">关</li><li id="opt-music-o">开</li></ul>
+      <div class="b-btn" onclick="options_call();">关闭</div>
+    </div>
+    <div id="docs" class="note" style="display: none;">
+        <h1>说明</h1>
+        <p>点击空格键或开始游戏按钮后启动计时游戏开始。</p>
+        <p>吃豆人触碰红旗后游戏结束。</p>
+        <p>使用WSAD或虚拟键盘控制吃豆人移动。</p>
+        <p>使用空格键或虚拟键盘改变吃豆人移动速度。</p>
+        <p>游戏中可暂停后选择显示走法，按照豆子走即可到达终点。</p>
+        <div class="b-btn" onclick="docs_call();">关闭</div>
+    </div>
+    <h1>吃豆人:迷宫</h1>
+    <img src="asset/player.svg">
+    <div onclick='begin()' class="b-btn">开始游戏</div>
+    <footer>&copy; LQB | <a href="https://www.mubucm.com/doc/1btjHN_muNA">开发文档</a></footer>
+</section>
+<section id="sidebar">
+    <span class="s-btn" onclick="wsad()">虚拟键盘</span>
+    <span class="s-btn" onclick="pause()">暂停</span>
+    速度：<span id="speed">x1</span>
+    用时：<span id="timer"></span>
+</section>
+<section id="pause" style="display: none;" class="note">
+    <h1>游戏暂停</h1>
+    <div class="b-btn" onclick="solve();pause();draw_face();">显示走法</div>
+    <div class="b-btn" onclick="location.reload();">重新开始</div>
+    <div class="b-btn" onclick="pause()">继续游戏</div>
+</section>
+<section id="over" style="display: none;" class="note">
+    <h1>游戏结束</h1>
+    <p id="over-note"></p>
+    <div class="b-btn" onclick="location.reload()">再来一局</div>
+</section>
+<section id="wsad" style="display: none;">
+    <div></div><div><img src="asset/control-w.svg" onclick="move('w')"></div><div></div>
+    <div><img src="asset/control-a.svg" onclick="move('a')"></div><div id="add-speed" onclick="add_speed()">x1</div><div><img src="asset/control-d.svg" onclick="move('d')"></div>
+    <div></div><div><img src="asset/control-s.svg" onclick="move('s')"></div><div></div>
+</section>
+<canvas id="canvas1"></canvas>
+<canvas id="canvas2"></canvas>
+</body>
+<script src="https://src-1303803761.cos.ap-beijing.myqcloud.com/js/cquery.js"></script>
+<script src="index.js"></script>
+<script src="math.js"></script>
+</html>
